@@ -1,18 +1,108 @@
-# React + Vite
+College Club Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based application to manage college clubs, members, and events with secure authentication and role-protected access.
 
-Currently, two official plugins are available:
+Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Frontend: React (Vite)
 
-## React Compiler
+-Backend & Database: Supabase (PostgreSQL + Auth)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+-Routing: React Router
 
-Note: This will impact Vite dev & build performances.
+-Styling: CSS
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Features
+User Authentication
+
+-User registration using email and password
+
+-User login and logout
+
+-Protected routes for authenticated users
+
+-Session management using Supabase Auth
+
+Club Member Management
+
+-Add new members with name, email, department, and joining date
+
+-Display all members in a clean table
+
+-Search members by name or department
+
+-Delete member records
+
+Events Management
+
+-Create events with title, date, description, and venue
+
+-View all upcoming events
+
+-Simple attendance marking using a checkbox
+
+-Event data persists after page refresh
+
+Dashboard
+
+-Displays total number of members
+
+-Displays total number of events
+
+-Loading states and basic error handling
+
+-Clean and responsive UI
+
+Project Structure
+
+src
+├── components
+│ └── Navbar.jsx
+├── pages
+│ ├── Login.jsx
+│ ├── Register.jsx
+│ ├── Dashboard.jsx
+│ ├── Members.jsx
+│ └── Events.jsx
+├── services
+│ └── supabaseClient.js
+├── App.jsx
+├── main.jsx
+└── index.css
+
+Database Design (Supabase)
+
+-Tables used:
+
+  members
+
+  events
+
+Row Level Security (RLS) is enabled.
+Policies allow authenticated users to perform CRUD operations on tables.
+
+How to Run the Project Locally
+
+Clone the repository
+  git clone https://github.com/Sahara1102/college-club-management
+
+Navigate to the project folder
+  cd college-club-management
+
+Install dependencies
+  npm install
+
+Create a .env file in the root directory and add:
+  VITE_SUPABASE_URL=your_supabase_url
+  VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+Start the development server
+  npm run dev
+
+Notes
+
+  Attendance is implemented as a simple boolean at the event level to satisfy the requirement for simple attendance marking.
+
+  The system can be extended in the future to support per-member attendance using a relational table
