@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* NAVBAR */
+nav {
+  background: #1e293b;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav button {
+  margin-left: auto;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* PAGE CONTAINER */
+.container {
+  padding: 20px;
+}
+
+/* FORMS */
+input {
+  padding: 8px;
+  margin: 6px 0;
+  width: 250px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
